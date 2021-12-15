@@ -110,8 +110,18 @@ class Page extends StatelessWidget {
             _scafoldkey.currentState.showSnackBar(snackbar);
           },
         ),
-        body: Container()
-        //Container(color: Colors.blue,height: 200,width: 200,alignment: Alignment.center,margin: EdgeInsets.only(left: 40, top: 40),padding: EdgeInsets.all(55),child: Text("boring !! ",style: TextStyle(backgroundColor: Colors.white, fontSize: 30),),)
+        body: Container(
+          color: Colors.blue,
+          height: 200,
+          width: 200,
+          alignment: Alignment.center,
+          margin: EdgeInsets.only(left: 40, top: 40),
+          padding: EdgeInsets.all(55),
+          child: Text(
+            "boring !! ",
+            style: TextStyle(backgroundColor: Colors.white, fontSize: 30),
+          ),
+        )
         //Container(margin: EdgeInsets.all(16),child: Column(children: [ TextField(controller: editingController,keyboardType: TextInputType.phone,decoration: InputDecoration(hintText: "Enter Phone Number",suffixIcon: Icon(Icons.phone),border: OutlineInputBorder()),),RaisedButton(onPressed: () {print('' + editingController.text);},child: Text("login"),)],)),
         //Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [RaisedButton(onPressed: () {},color: Colors.green,child: Text("next"),),RaisedButton(onPressed: () {},color: Colors.green,child: Text("pre"),)],)
         //Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [Icon(Icons.home),Icon(Icons.list), ],),
