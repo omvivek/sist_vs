@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sist_vs/second_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -110,12 +111,19 @@ class Page extends StatelessWidget {
             _scafoldkey.currentState.showSnackBar(snackbar);
           },
         ),
-        body: RaisedButton(
-          onPressed: () {
-            createalert(context);
-          },
-          child: Text("alert"),
+        body: Container(
+          alignment: Alignment.bottomRight,
+          padding: EdgeInsets.all(6.0),
+          child: RaisedButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Secondscreen()));
+            },
+            child: Text("Next"),
+          ),
         )
+        //RaisedButton(onPressed: () {createalert(context);},child: Text("alert"),)
         //Container(color: Colors.blue,height: 200,width: 200,alignment: Alignment.center,margin: EdgeInsets.only(left: 40, top: 40),padding: EdgeInsets.all(55),child: Text("boring !! ",style: TextStyle(backgroundColor: Colors.white, fontSize: 30),),)
         //Container(margin: EdgeInsets.all(16),child: Column(children: [ TextField(controller: editingController,keyboardType: TextInputType.phone,decoration: InputDecoration(hintText: "Enter Phone Number",suffixIcon: Icon(Icons.phone),border: OutlineInputBorder()),),RaisedButton(onPressed: () {print('' + editingController.text);},child: Text("login"),)],)),
         //Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [RaisedButton(onPressed: () {},color: Colors.green,child: Text("next"),),RaisedButton(onPressed: () {},color: Colors.green,child: Text("pre"),)],)
@@ -126,25 +134,5 @@ class Page extends StatelessWidget {
         );
   }
 
-  createalert(BuildContext context) {
-    var alertdialog = AlertDialog(
-      backgroundColor: Colors.blue,
-      elevation: 10.0,
-      title: Text("Congrats"),
-      content: Text("you have won iphone 7 plus"),
-      actions: [
-        GestureDetector(
-          child: Text("close"),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        )
-      ],
-    );
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alertdialog;
-        });
-  }
+  //createalert(BuildContext context) {var alertdialog = AlertDialog(backgroundColor: Colors.blue,elevation: 10.0,title: Text("Congrats"),content: Text("you have won iphone 7 plus"),actions: [GestureDetector(child: Text("close"),onTap: () {Navigator.pop(context);},)],);showDialog(context: context,builder: (BuildContext context) {return alertdialog;});}
 }
