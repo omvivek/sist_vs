@@ -82,8 +82,8 @@ class Page extends StatelessWidget {
     return Scaffold(
         key: _scafoldkey,
         appBar: AppBar(
-          title: Text("First Page"),
-          leading: Icon(Icons.home),
+          title: Text("Home Page"),
+          leading: Icon(Icons.account_circle_rounded),
           centerTitle: true,
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
