@@ -12,26 +12,22 @@ class Secondscreen extends StatelessWidget {
         );
   }
 
+  List<String> generateListItems() {
+    List<String> list = List.generate(100, (counter) => "item $counter");
+    return list;
+  }
+
   Widget createListView() {
-    var listview = ListView(
-      children: [
-        ListTile(
-          leading: Icon(Icons.access_alarm_outlined),
-          title: Text("Alarm"),
-          subtitle: Text("This is an alarm"),
-          trailing: Icon(Icons.attach_money),
-          onTap: () {
-            print("clicked on alarm");
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.map_outlined),
-          title: Text("Map"),
-          subtitle: Text("This is a map"),
-          trailing: Icon(Icons.attach_money),
-        ),
-      ],
-    );
+    var listItems = generateListItems();
+    var listview = ListView.builder(itemBuilder: (context, index) {
+      return ListTile(
+        leading: Text("$index"),
+        title: Text(listItems[index]),
+        onTap: () {
+          print(listItems[index]);
+        },
+      );
+    });
     return listview;
   }
 }
